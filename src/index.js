@@ -49,10 +49,10 @@ class Game extends React.Component {
         this.state = {
             history: [{
                 squares: Array(9).fill(null),
+                location: {col: null, raw: null}
             }],
             stepNumber: 0,
             xIsNext: true,
-            location: {col: null, row: null}
         }
     }
 
@@ -71,10 +71,10 @@ class Game extends React.Component {
         this.setState({
             history: history.concat([{
                 squares: squares,
+                location: location
             }]),
             stepNumber: history.length,
             xIsNext: !this.state.xIsNext,
-            location: location
         });
     }
 
@@ -93,7 +93,7 @@ class Game extends React.Component {
 
         const moves = history.map((step, move) => {
            const desc = move ? 'Go to move #' + move : 'Go to game start';
-           const cl = (this.state.stepNumber === move) ? 'bold' : 'normal'
+           const cl = (this.state.stepNumber === move) ? 'bold' : 'normal';
            return (
                <li key={move} className={cl}>
                    <button className={cl} onClick={()=> this.jumpTo(move)}>
@@ -119,7 +119,7 @@ class Game extends React.Component {
                 </div>
                 <div className="game-info">
                     <div>{status}</div>
-                    <div>{this.state.location.col}, {this.state.location.row}</div>
+                    <div>{'col: ' + (current.location.col || '')} <br/> {'raw: ' + (current.location.row||'')}</div>
                     <ol>{moves}</ol>
                 </div>
             </div>
