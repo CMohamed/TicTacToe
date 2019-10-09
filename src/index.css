@@ -51,3 +51,6 @@ ol, ul {
 .bold {
     font-weight: bold;
 }
+.highLight {
+    background-color: aquamarine;
+}
