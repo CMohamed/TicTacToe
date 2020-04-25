@@ -61,7 +61,7 @@ class Game extends React.Component {
     }
 
     handleClick(i) {
-        console.log('omar elmansouri ' + (new Date()).toLocaleString);
+        console.log('omar elmansouri ' + (new Date()).toLocaleString());
         const history = this.state.history.slice(0, this.state.stepNumber + 1);
         const current = history[history.length - 1];
         const squares = current.squares.slice();
