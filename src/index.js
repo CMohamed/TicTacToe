@@ -116,6 +116,7 @@ class Game extends React.Component {
 
         return (
             <div className="game">
+                <h2>Omar ELMANSOURI</h2>
                 <div className="game-board">
                     <Board
                         winningLine={winner}
